@@ -1,0 +1,63 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(242, 242, 242) !important;
+}
+
+/*  CSS pages file */
+.home-page img {
+  width: 100%;
+  background-size: cover;
+}
+
+/* event-page */
+.events-album {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 20px 100px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.events-album .card {
+  margin: 15px;
+  width: 300px;
+  align-self: start;
+  transition: all 300ms linear;
+  border: 2px solid rgb(255, 255, 255);
+}
+.events-album .card:hover {
+  border: 2px solid rgb(39, 113, 134);
+}
+.card-text a:hover {
+  color: rgb(242, 242, 242);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.navbar {
+  background-color: white !important;
+}
+
+.btn-gray-300 {
+  background-color: rgb(39, 113, 134) !important;
+  border: none !important;
+}
+.nav-link {
+  border-bottom: 4px solid white !important;
+}
+.nav-link:hover {
+  border-bottom: 4px solid rgb(39, 113, 134) !important;
+}
+
+.athletes-page {
+}
+.event-page {
+}
+.signin-page {
+}
+.signout-page {
+}
+.welcome-page {
+}
