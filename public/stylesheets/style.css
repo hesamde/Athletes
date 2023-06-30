@@ -28,7 +28,7 @@ body {
   border: 2px solid rgb(255, 255, 255);
 }
 .events-album .card:hover {
-  border: 2px solid rgb(39, 113, 134);
+  border: 2px solid #277186;
 }
 .card-text a:hover {
   color: rgb(242, 242, 242);
@@ -50,14 +50,218 @@ body {
 .nav-link:hover {
   border-bottom: 4px solid rgb(39, 113, 134) !important;
 }
+.logo-image {
+  width: 300px;
+  margin-left: 20%;
+}
+/* signup-form */
+#signup-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+}
+#signup-button {
+  width: 150px;
+  margin: 10 30;
+}
+.btn-primary {
+  background-color: #277186 !important;
+}
 
-.athletes-page {
+.nav-photo {
+  width: 250px;
+  margin-left: 310px;
 }
-.event-page {
+
+/* ------- sign up form--------- */
+.gradient-custom-3 {
+  /* fallback for old browsers */
+  background: #84fab0;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(132, 250, 176, 0.5),
+    rgba(143, 211, 244, 0.5)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(132, 250, 176, 0.5),
+    rgba(143, 211, 244, 0.5)
+  );
 }
-.signin-page {
+.gradient-custom-4 {
+  /* fallback for old browsers */
+  background: #84fab0;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(132, 250, 176, 1),
+    rgba(143, 211, 244, 1)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(132, 250, 176, 1),
+    rgba(143, 211, 244, 1)
+  );
 }
-.signout-page {
+
+.search-profile {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
 }
-.welcome-page {
+
+.search-profile input {
+  height: 36px;
+}
+/* Athletes-page */
+.search-create-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Athletes-album {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 20px 100px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.Athletes-album .card {
+  margin: 15px;
+  width: 300px;
+  align-self: start;
+  transition: all 300ms linear;
+  border: 2px solid rgb(255, 255, 255);
+}
+.Athletes-album .card:hover {
+  border: 2px solid #277186;
+}
+.card-text a:hover {
+  color: rgb(242, 242, 242);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.navbar {
+  background-color: white !important;
+}
+
+.btn-gray-300 {
+  background-color: rgb(39, 113, 134) !important;
+  border: none !important;
+}
+.nav-link {
+  border-bottom: 4px solid white !important;
+}
+.nav-link:hover {
+  border-bottom: 4px solid rgb(39, 113, 134) !important;
+}
+.logo-image {
+  width: 300px;
+  margin-left: 20%;
+}
+
+.regular-btn {
+  background-color: burlywood;
+  border: 1px solid dimgray;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  text-decoration: none;
+
+  height: 36px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.regular-btn:hover {
+  background-color: rgb(187, 134, 65);
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-button {
+  position: absolute;
+}
+
+.search-input {
+  padding-left: 70px;
+}
+
+/* create-profile-page */
+.gradient-custom-3 {
+  /* fallback for old browsers */
+  background: #84fab0;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(132, 250, 176, 0.5),
+    rgba(143, 211, 244, 0.5)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(132, 250, 176, 0.5),
+    rgba(143, 211, 244, 0.5)
+  );
+}
+.gradient-custom-4 {
+  /* fallback for old browsers */
+  background: #84fab0;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(132, 250, 176, 1),
+    rgba(143, 211, 244, 1)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(132, 250, 176, 1),
+    rgba(143, 211, 244, 1)
+  );
+}
+
+.card-transparent {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+#form-search-athlete {
+  margin-top: 25px;
+}
+
+.athlete-info {
+  margin: 25px auto;
+  background-color: white;
+  border: 1px solid dimgray;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.athlete-info .item {
+  padding: 25px;
+}
+.athlete-info .item:hover {
+  background-color: antiquewhite;
 }

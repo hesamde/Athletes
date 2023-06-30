@@ -1,26 +1,55 @@
-<div id="login-form">
-  <h2>Log In</h2>
-  <form action="/auth/login" method="POST">
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="../images/signup-photo.jpg"
+          class="img-fluid" alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <form>
+          <!-- Username input -->
+          <span>Username</span>
+          <div class="form-outline mb-4">
+            <input
+              type="Username"
+              id="form1Example13"
+              class="form-control form-control-lg"
+            />
+            <label class="form-label" for="form1Example13"></label>
+          </div>
 
-    <label>
-      Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label>
+          <!-- Email input -->
+          <span>Email address</span>
+          <div class="form-outline mb-4">
+            <input
+              type="email"
+              id="form1Example13"
+              class="form-control form-control-lg"
+            />
+            <label class="form-label" for="form1Example13"></label>
+          </div>
 
-    <label>
-      Email
-      <input type="email" name="email" placeholder="Your email" />
-    </label>
+          <!-- Password input -->
+          <span>Password</span>
+          <div class="form-outline mb-4">
+            <input
+              type="password"
+              id="form1Example23"
+              class="form-control form-control-lg"
+            />
+            <label class="form-label" for="form1Example23"></label>
+          </div>
 
-    <label>
-      Password
-      <input type="password" name="password" placeholder="Your password" />
-    </label>
+          <div class="d-flex justify-content-around align-items-center mb-4">
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
 
-    <button type="submit">Log In</button>
-
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
-</div>
+          <div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+          </div>
+            <a href="signup" class="fw-bold text-body">create an account</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -11,6 +11,15 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    {{! views/layout.hbs }}
+    <title>{{title}}</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    {{! has to be added }}
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    {{! ... }}
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -28,10 +37,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a href="/home" class="active">Home</a>
-            <a href="/Athletes" class="nav-link">Athletes</a>
-            <a href="/Events" class="nav-link">Events</a>
+            <a href="/home" class="nav-link active">home</a>
+            <a href="/athlete-list" class="nav-link">athletes</a>
+            <a href="/Events" class="nav-link">events</a>
           </div>
+          <img class="nav-photo" src="../images/nav-photo.jpg" />
           <div class="navbar-nav ms-auto">
             <a href="/auth/signup" class="nav-link"><button
                 class="btn btn-primary btn-gray-300"
@@ -42,15 +52,30 @@
           </div>
         </div>
       </div>
+
     </nav>
 
     {{{body}}}
-
     <script src="/js/script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+      integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
   </body>
 </html>
