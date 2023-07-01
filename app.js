@@ -15,6 +15,8 @@ const hbs = require("hbs");
 
 const app = express();
 
+app.locals.currentUser = null;
+
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 

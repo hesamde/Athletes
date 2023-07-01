@@ -22,6 +22,7 @@ router.get("/signup", isLoggedOut, (req, res) => {
 
 // POST /auth/signup
 router.post("/signup", isLoggedOut, (req, res) => {
+  console.log(req.body);
   const { username, email, password } = req.body;
 
   // Check that username, email, and password are provided
@@ -117,7 +118,6 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           .render("auth/login", { errorMessage: "Wrong credentials." });
         return;
       }
-
       // If user is found based on the username, check if the in putted password matches the one saved in the database
       bcrypt
         .compare(password, user.password)
@@ -130,11 +130,14 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           }
 
           // Add the user object to the session object
-          req.session.currentUser = user.toObject();
+          req.session.currentUser = { username, email };
+          currentUser = user.username;
+          user.loggedIn = true;
+
           // Remove the password field
           delete req.session.currentUser.password;
 
-          res.redirect("/");
+          res.render("home", user);
         })
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
     })
@@ -148,8 +151,9 @@ router.get("/logout", isLoggedIn, (req, res) => {
       res.status(500).render("auth/logout", { errorMessage: err.message });
       return;
     }
-
-    res.redirect("/");
+    currentUser = null;
+    user.loggedIn = false;
+    res.redirect("/home");
   });
 });
 

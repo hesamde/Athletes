@@ -16,7 +16,7 @@ router.get("/athlete-list", (req, res) => {
 
   Athlete.find()
     .then((listOfAthletes) => {
-      res.render("athlete-list", { list: listOfAthletes });
+      res.render("athlete-list", { list: listOfAthletes, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);

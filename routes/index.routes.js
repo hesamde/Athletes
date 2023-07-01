@@ -1,4 +1,5 @@
 const express = require("express");
+const isLoggedIn = require("../middleware/isLoggedIn");
 const router = express.Router();
 
 /* GET home page */
@@ -7,15 +8,15 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/home", (req, res, next) => {
-  res.render("home");
+  res.render("home", { loggedIn: true });
 });
 
 router.get("/events", (req, res, next) => {
-  res.render("events");
+  res.render("events", { loggedIn: true });
 });
 
 router.get("/welcome", (req, res, next) => {
-  res.redirect("welcome");
+  res.render("home");
 });
 
 router.get("/search-event", (req, res, next) => {

@@ -10,13 +10,14 @@
             <div class="card-body p-3">
               <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-              <form>
+              <form method="post" action="/auth/signup">
 
                 <div class="form-outline mb-1">
                   <input
                     type="text"
                     id="form3Example1cg"
                     class="form-control form-control-lg"
+                    name="username"
                   />
                   <label class="form-label" for="form3Example1cg">Your Name</label>
                 </div>
@@ -26,6 +27,7 @@
                     type="email"
                     id="form3Example3cg"
                     class="form-control form-control-lg"
+                    name="email"
                   />
                   <label class="form-label" for="form3Example3cg">Your Email</label>
                 </div>
@@ -35,6 +37,7 @@
                     type="password"
                     id="form3Example4cg"
                     class="form-control form-control-lg"
+                    name="password"
                   />
                   <label
                     class="form-label"
@@ -47,6 +50,7 @@
                     type="password"
                     id="form3Example4cdg"
                     class="form-control form-control-lg"
+                    name="passwordRepeat"
                   />
                   <label class="form-label" for="form3Example4cdg">Repeat your
                     password</label>
@@ -54,7 +58,7 @@
 
                 <div class="d-flex justify-content-center">
                   <button
-                    type="button"
+                    type="submit"
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
                   >Register</button>
                 </div>
