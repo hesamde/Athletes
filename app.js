@@ -35,7 +35,7 @@ app.use("/auth", authRoutes);
 
 // athletesRouter needs to be added so paste the following lines:
 const athletesRouter = require("./routes/athlete.routes"); // <== has to be added
-app.use(athletesRouter); // <== has to be added
+app.use("/athlete", athletesRouter); // <== has to be added
 // ...
 // ----------------------------------
 

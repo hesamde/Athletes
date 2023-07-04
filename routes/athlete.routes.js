@@ -16,7 +16,10 @@ router.get("/athlete-list", (req, res) => {
 
   Athlete.find()
     .then((listOfAthletes) => {
-      res.render("athlete-list", { list: listOfAthletes, loggedIn: true });
+      res.render("athlete-list", {
+        list: listOfAthletes,
+        currentUser: req.session.currentUser,
+      });
     })
     .catch((err) => {
       console.log(err);
@@ -72,12 +75,11 @@ router.get("/athlete-info", (req, res) => {
     });
 });
 
-router.delete("/:id", function (req, res, next) {
+router.post("/delete/:id", function (req, res, next) {
   Athlete.findById(req.params.id, function (err, Athlete) {
     Athlete.remove(function (err) {
       res.redirect("/athlete");
     });
   });
 });
-
 module.exports = router;

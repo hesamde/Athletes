@@ -8,11 +8,11 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/home", (req, res, next) => {
-  res.render("home", { loggedIn: true });
+  res.render("home", { currentUser: req.session.currentUser });
 });
 
 router.get("/events", (req, res, next) => {
-  res.render("events", { loggedIn: true });
+  res.render("events", { currentUser: req.session.currentUser });
 });
 
 router.get("/welcome", (req, res, next) => {

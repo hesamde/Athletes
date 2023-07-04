@@ -3,18 +3,14 @@
     <div class="search-profile">
       <a href="athlete-create" class="regular-btn mr-2">Create Athlete Profile</a>
       &nbsp;
-
     </div>
   </form>
   <br />
 </div>
-{{! ------------------------------ }}
 <br />
 <div class="Athletes-album">
-
   {{#each list}}
-
-    <a href="/athlete-info?id={{this.id}}"><div class="card">
+    <a href="/athlete/athlete-info?id={{this.id}}"><div class="card">
         <img
           class="card-img-top"
           src={{this.imageUrl}}
@@ -29,7 +25,5 @@
           <p>{{this.achievement}}</p>
         </div>
       </div></a>
-
   {{/each}}
-
 </div>

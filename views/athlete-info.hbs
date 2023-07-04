@@ -17,12 +17,13 @@
     Gender :
     {{data.gender}}</div>
 </div>
-<form name="delete-athlete-form" id="delete-athlete-form" method="delete">
+<form action="/delete" method="post">
   <div class="form-submit">
-    <input type="submit" value="Delete Profile" />
+    <button type="submit" value="Delete Profile" />
   </div>
+</form>
 
-  {{!-- {{#each list}}
+{{!-- {{#each list}}
     <div>
       <h3>{{title}}</h3>
       <p>{{Name}}</p>
@@ -36,5 +37,4 @@
       </form>
     </div>
     <hr />
-  {{/each}}
-</form> --}}
+  {{/each}} --}}
