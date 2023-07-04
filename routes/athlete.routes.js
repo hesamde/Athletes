@@ -71,4 +71,13 @@ router.get("/athlete-info", (req, res) => {
       console.log(err);
     });
 });
+
+router.delete("/:id", function (req, res, next) {
+  Athlete.findById(req.params.id, function (err, Athlete) {
+    Athlete.remove(function (err) {
+      res.redirect("/athlete");
+    });
+  });
+});
+
 module.exports = router;

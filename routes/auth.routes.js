@@ -19,7 +19,6 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 router.get("/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
 });
-
 // POST /auth/signup
 router.post("/signup", isLoggedOut, (req, res) => {
   console.log(req.body);
@@ -131,7 +130,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 
           // Add the user object to the session object
           req.session.currentUser = { username, email };
-          currentUser = user.username;
+          currentUser = req.session.currentUser;
           user.loggedIn = true;
 
           // Remove the password field
@@ -146,15 +145,9 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 
 // GET /auth/logout
 router.get("/logout", isLoggedIn, (req, res) => {
-  req.session.destroy((err) => {
-    if (err) {
-      res.status(500).render("auth/logout", { errorMessage: err.message });
-      return;
-    }
-    currentUser = null;
-    user.loggedIn = false;
-    res.redirect("/home");
-  });
+  req.session.destroy();
+  currentUser = null;
+  res.redirect("/home");
 });
 
 module.exports = router;

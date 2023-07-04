@@ -1,0 +1,56 @@
+<h2>Edit the Athlete: {{title}}</h2>
+
+<form action="/books/{{_id}}/edit" method="post">
+
+  <label for="Name-input">Name:</label>
+  <input type="text" name="Name" id="Name-input" value="{{Name}}" />
+
+  <label for="Nationality-input">Nationality:</label>
+  <input
+    type="text"
+    name="Nationality"
+    id="Nationality-input"
+    value="{{Nationality}}"
+  />
+
+  <label for="Achievement-input">Achievement:</label>
+  <textarea
+    name="Achievement"
+    id="Achievement-input"
+    cols="30"
+    rows="4"
+  >{{Achievement}} </textarea>
+
+  <label for="Date of Birth-input">Date of Birth:</label>
+  <input
+    type="number"
+    name="Date of Birth"
+    id="Date of Birth-input"
+    min="1"
+    max="10"
+    value="{{Date of Birth}}"
+  />
+
+  <label for="Gender-input">Gender:</label>
+  <input
+    type="number"
+    name="Gender"
+    id="Gender-input"
+    min="1"
+    max="10"
+    value="{{Gender}}"
+  />
+  {{!-- <label for="">Username:</label>
+  <input type="text" name="username" value="{{username}}" />
+  <br />
+  <label for="">Email:</label>
+  <input type="email" name="email" value="{{email}}" />
+  <br />
+  <label for="">Password:</label>
+  <input type="password" name="password" value="{{password}}" />
+  <br />
+  <button type="submit">Edit New User</button>
+
+  <button type="submit">Save changes</button> --}}
+
+</form>
