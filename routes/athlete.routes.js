@@ -74,12 +74,15 @@ router.get("/athlete-info", (req, res) => {
       console.log(err);
     });
 });
-
-router.post("/delete/:id", function (req, res, next) {
-  Athlete.findById(req.params.id, function (err, Athlete) {
-    Athlete.remove(function (err) {
-      res.redirect("/athlete");
-    });
-  });
+// 1
+router.post("/delete", async function (req, res, next) {
+  console.log("inja");
+  try {
+    const deletedUser = await Athlete.findOneAndDelete({ id: req.query.id });
+    res.redirect("/athlete/athlete-list");
+  } catch (error) {
+    console.log(error);
+  }
 });
+
 module.exports = router;

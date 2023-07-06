@@ -265,3 +265,11 @@ body {
 .athlete-info .item:hover {
   background-color: antiquewhite;
 }
+
+.des-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+}

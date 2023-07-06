@@ -17,24 +17,15 @@
     Gender :
     {{data.gender}}</div>
 </div>
-<form action="/delete" method="post">
-  <div class="form-submit">
-    <button type="submit" value="Delete Profile" />
+
+<form action="/athlete/delete?id={{data.id}}" method="post">
+  <div class="des-button">
+    <button type="submit" value="Delete Profile">Delete Profile</button>
   </div>
 </form>
 
-{{!-- {{#each list}}
-    <div>
-      <h3>{{title}}</h3>
-      <p>{{Name}}</p>
-      <p>{{Nationality}}</p>
-      <p>{{Achievement}}</p>
-      <p>{{Date of Birth}}</p>
-      <p>{{Gender}}</p>
-      <a href="/athlete/{{_id}}/edit">Edit</a>
-      <form action="/athlete/{{_id}}/delete" method="POST">
-        <button>Delete</button>
-      </form>
-    </div>
-    <hr />
-  {{/each}} --}}
+<form action="/athlete-edit" method="post"></form>
+<div class="des-button">
+  <button type="submit" value="edit Profile" />edit Profile
+
+</div>
