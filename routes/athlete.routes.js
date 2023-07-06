@@ -32,7 +32,7 @@ router.get("/athlete-create", (req, res) => {
 
 // GET route to display the form to create a new athletes
 router.post(
-  "/athlete/create",
+  "/create",
   fileUploader.single("athlete-cover-image"),
   (req, res) => {
     const unique = `${(
@@ -52,7 +52,8 @@ router.post(
       .then((data) => {
         console.log("Athelete has been added!");
         console.log(data);
-        res.redirect("/athlete-list");
+
+        res.redirect("/athlete/athlete-list");
       })
       .then((err) => {
         console.log(err);
@@ -74,15 +75,36 @@ router.get("/athlete-info", (req, res) => {
       console.log(err);
     });
 });
-// 1
-router.post("/delete", async function (req, res, next) {
-  console.log("inja");
+
+router.post("/delete/:id", async function (req, res, next) {
+  console.log(req.params.id);
   try {
-    const deletedUser = await Athlete.findOneAndDelete({ id: req.query.id });
+    const deletedUser = await Athlete.findByIdAndDelete(req.params.id);
     res.redirect("/athlete/athlete-list");
   } catch (error) {
     console.log(error);
   }
 });
+// --------------------------------------------
+
+router.get("/athlete-edit/:id ", async function (req, res, next) {
+  console.log(req.params.id);
+  try {
+    const editUser = await Athlete.findById(req.params.id);
+    res.render("athlete-edit", editUser);
+  } catch (error) {
+    console.log(error);
+  }
+});
+// -----------------------------------
+// router.post("/edit/:id", async function (req, res, next) {
+//   console.log(req.params.id);
+//   try {
+//     const deletedUser = await Athlete.findByIdAndDelete(req.params.id);
+//     res.redirect("/athlete/athlete-list");
+//   } catch (error) {
+//     console.log(error);
+//   }
+// });
 
 module.exports = router;
