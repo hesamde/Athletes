@@ -254,7 +254,7 @@ body {
   margin: 25px auto;
   background-color: white;
   border: 1px solid dimgray;
-  width: 800px;
+  width: 500px;
   display: flex;
   flex-direction: column;
 }
@@ -272,4 +272,11 @@ body {
   justify-content: center;
   height: 50px;
   width: 100%;
+}
+
+.edit-page-css {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

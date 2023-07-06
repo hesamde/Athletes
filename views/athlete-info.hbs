@@ -20,13 +20,21 @@
 
 <form action="/athlete/delete/{{data._id}}" method="post">
   <div class="des-button">
-    <button type="submit" value="Delete Profile">Delete Profile</button>
+    <button
+      class="btn btn-primary btn-gray-300"
+      type="submit"
+      value="Delete Profile"
+    >Delete Profile</button>
   </div>
 </form>
 
 <form action="/athlete/athlete-edit/{{data._id}}" method="get">
   <div class="des-button">
-    <button type="submit" value="edit Profile" />edit Profile
+    <button
+      class="btn btn-primary btn-gray-300"
+      type="submit"
+      value="edit Profile"
+    />edit Profile
   </div>
 </form>
 {{!-- <a href="/athlete/athlete-edit/{{data._id}}">edit</a> --}}

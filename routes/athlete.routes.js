@@ -98,14 +98,17 @@ router.get("/athlete-edit/:id", async function (req, res, next) {
   }
 });
 // -----------------------------------
-// router.post("/edit/:id", async function (req, res, next) {
-//   console.log(req.params.id);
-//   try {
-//     const deletedUser = await Athlete.findByIdAndDelete(req.params.id);
-//     res.redirect("/athlete/athlete-list");
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
+router.post("/athlete-edit/:id", async function (req, res, next) {
+  console.log(req.params.id);
+  try {
+    const deletedUser = await Athlete.findByIdAndUpdate(
+      req.params.id,
+      req.body
+    );
+    res.redirect("/athlete/athlete-list");
+  } catch (error) {
+    console.log(error);
+  }
+});
 
 module.exports = router;

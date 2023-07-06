@@ -1,44 +1,65 @@
-<h2>Edit the Athlete: {{title}}</h2>
+<h2 class="">Edit the Athlete: {{title}}</h2>
 
-<form action="/athlete/athlete-edit/{{_id}}/" method="post">
+<form
+  class="edit-page-css"
+  action="/athlete/athlete-edit/{{_id}}/"
+  method="post"
+>
 
-  <label for="Name-input">Name:</label>
-  <input type="text" name="Name" id="Name-input" value="{{Name}}" />
+  <label for="name-input">Name:</label>
+  <input type="text" name="name" id="name-input" value="{{name}}" />
 
-  <label for="Nationality-input">Nationality:</label>
+  <label for="nationality-input">Nationality:</label>
   <input
     type="text"
-    name="Nationality"
-    id="Nationality-input"
+    name="nationality"
+    id="nationality-input"
     value="{{nationality}}"
   />
 
   <label for="Achievement-input">Achievement:</label>
-  <textarea
-    name="Achievement"
-    id="Achievement-input"
-    cols="30"
-    rows="4"
-  >{{achievement}} </textarea>
-
-  <label for="Date of Birth-input">Date of Birth:</label>
   <input
-    type="number"
-    name="Date of Birth"
-    id="Date of Birth-input"
-    min="1"
-    max="10"
+    type="text"
+    name="achievement"
+    id="achievement-input"
+    value="{{achievement}}"
+  />
+
+  <label for="dateofbirth-input">Date of Birth:</label>
+  <input
+    type="date"
+    name="dateofbirth"
+    id="dateofbirth-input"
     value="{{dateofbirth}}"
   />
-
-  <label for="Gender-input">Gender:</label>
-  <input
-    type="number"
-    name="Gender"
-    id="Gender-input"
-    min="1"
-    max="10"
-    value="{{gender}}"
-  />
-  <button type="submit" value="edit">Edit</button>
+  <div>
+    <br />
+    <label for="gender">Gender:</label>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="gender"
+        id="male"
+        value="{{gender}}"
+      />
+      <label class="form-check-label" for="male">Male</label>
+      <br />
+    </div>
+    <div class="form-check form-check-inline">
+      <br />
+      <input
+        class="form-check-input"
+        type="radio"
+        name="gender"
+        id="female"
+        value="{{gender}}"
+      />
+      <label class="form-check-label" for="female">Female</label>
+    </div>
+  </div>
+  <br />
+  <button class="btn btn-primary btn-gray-300" type="submit">Submit</button>
 </form>
+
+{{! ---------------------------------------------- }}
