@@ -1,6 +1,6 @@
 <h2>Edit the Athlete: {{title}}</h2>
 
-<form action="/books/{{_id}}/edit" method="post">
+<form action="/athlete/athlete-edit/{{_id}}/" method="post">
 
   <label for="Name-input">Name:</label>
   <input type="text" name="Name" id="Name-input" value="{{Name}}" />
@@ -10,7 +10,7 @@
     type="text"
     name="Nationality"
     id="Nationality-input"
-    value="{{Nationality}}"
+    value="{{nationality}}"
   />
 
   <label for="Achievement-input">Achievement:</label>
@@ -19,7 +19,7 @@
     id="Achievement-input"
     cols="30"
     rows="4"
-  >{{Achievement}} </textarea>
+  >{{achievement}} </textarea>
 
   <label for="Date of Birth-input">Date of Birth:</label>
   <input
@@ -28,7 +28,7 @@
     id="Date of Birth-input"
     min="1"
     max="10"
-    value="{{Date of Birth}}"
+    value="{{dateofbirth}}"
   />
 
   <label for="Gender-input">Gender:</label>
@@ -38,6 +38,7 @@
     id="Gender-input"
     min="1"
     max="10"
-    value="{{Gender}}"
+    value="{{gender}}"
   />
+  <button type="submit" value="edit">Edit</button>
 </form>

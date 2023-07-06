@@ -87,11 +87,12 @@ router.post("/delete/:id", async function (req, res, next) {
 });
 // --------------------------------------------
 
-router.get("/athlete-edit/:id ", async function (req, res, next) {
+router.get("/athlete-edit/:id", async function (req, res, next) {
   console.log(req.params.id);
   try {
     const editUser = await Athlete.findById(req.params.id);
     res.render("athlete-edit", editUser);
+    console.log(editUser);
   } catch (error) {
     console.log(error);
   }
