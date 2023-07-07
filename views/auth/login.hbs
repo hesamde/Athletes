@@ -1,56 +1,63 @@
-<section class="vh-100">
+<section class="vh-100 card-body p-3">
   <div class="container py-5 h-100">
     <div class="row d-flex align-items-center justify-content-center h-100">
       <div class="col-md-8 col-lg-7 col-xl-6">
-        <img src="../images/signup-photo.jpg"
-          class="img-fluid" alt="Phone image">
+        <img
+          src="/images/signup-photo.jpg"
+          class="img-fluid"
+          alt="Phone image"
+        />
       </div>
       <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
         <form method="post" action="/auth/login">
           <!-- Username input -->
-          <span>Username</span>
-          <div class="form-outline mb-4">
+          <div class="form-group">
+            <label for="form1Example13">Username</label>
             <input
-              type="Username"
+              type="text"
               id="form1Example13"
               class="form-control form-control-lg"
               name="username"
             />
-            <label class="form-label" for="form1Example13"></label>
           </div>
 
           <!-- Email input -->
-          <span>Email address</span>
-          <div class="form-outline mb-4">
+          <div class="form-group">
+            <label for="form1Example14">Email address</label>
             <input
               type="email"
-              id="form1Example13"
+              id="form1Example14"
               class="form-control form-control-lg"
               name="email"
             />
-            <label class="form-label" for="form1Example13"></label>
           </div>
 
           <!-- Password input -->
-          <span>Password</span>
-          <div class="form-outline mb-4">
+          <div class="form-group">
+            <label for="form1Example15">Password</label>
             <input
               type="password"
-              id="form1Example23"
+              id="form1Example15"
               class="form-control form-control-lg"
               name="password"
             />
-            <label class="form-label" for="form1Example23"></label>
           </div>
 
-          <div class="d-flex justify-content-around align-items-center mb-4">
-          <!-- Submit button -->
-          <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Sign
+              in</button>
 
-          <div class="divider d-flex align-items-center my-4">
-            <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+            <!-- Divider -->
+            <div class="divider mx-3">
+              <p class="text-center fw-bold mb-0 text-muted">OR</p>
+            </div>
+
+            <!-- Create account link -->
+            <p class="mb-0">
+              <a href="signup" class="fw-bold text-body">Create an account</a>
+            </p>
           </div>
-            <a href="signup" class="fw-bold text-body">create an account</a></p>
         </form>
       </div>
     </div>

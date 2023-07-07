@@ -30,31 +30,14 @@ router.post("/signup", isLoggedOut, (req, res) => {
       errorMessage:
         "All fields are mandatory. Please provide your username, email and password.",
     });
-
     return;
   }
-
   if (password.length < 6) {
     res.status(400).render("auth/signup", {
       errorMessage: "Your password needs to be at least 6 characters long.",
     });
-
     return;
   }
-
-  //   ! This regular expression checks password for special characters and minimum length
-  /*
-  const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
-  if (!regex.test(password)) {
-    res
-      .status(400)
-      .render("auth/signup", {
-        errorMessage: "Password needs to have at least 6 chars and must contain at least one number, one lowercase and one uppercase letter."
-    });
-    return;
-  }
-  */
-
   // Create a new user - start by hashing the password
   bcrypt
     .genSalt(saltRounds)
@@ -95,11 +78,9 @@ router.post("/login", isLoggedOut, (req, res, next) => {
       errorMessage:
         "All fields are mandatory. Please provide username, email and password.",
     });
-
     return;
   }
 
-  // Here we use the same logic as above
   // - either length based parameters or we check the strength of a password
   if (password.length < 6) {
     return res.status(400).render("auth/login", {
@@ -127,15 +108,12 @@ router.post("/login", isLoggedOut, (req, res, next) => {
               .render("auth/login", { errorMessage: "Wrong credentials." });
             return;
           }
-
           // Add the user object to the session object
           req.session.currentUser = { username, email };
           currentUser = req.session.currentUser;
           user.loggedIn = true;
-
           // Remove the password field
           delete req.session.currentUser.password;
-
           res.render("home", user);
         })
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
