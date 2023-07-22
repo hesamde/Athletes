@@ -109,9 +109,10 @@ router.post("/login", isLoggedOut, (req, res, next) => {
             return;
           }
           // Add the user object to the session object
-          req.session.currentUser = { username, email };
-          currentUser = req.session.currentUser;
+          req.session.currentUser = { username, email, admin: user.isAdimin };
+          currentUser = req.session.currentUser,
           user.loggedIn = true;
+
           // Remove the password field
           delete req.session.currentUser.password;
           res.render("home", user);

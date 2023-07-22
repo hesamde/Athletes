@@ -1,15 +1,10 @@
-// const isAdmin = (req, res, next) => {
-//   const nonSecurePaths = ["/", "/about", "/contact"];
-//   if (nonSecurePaths.includes(req.path)) {
-//     return next();
-//   }
+const isAdmin = (req, res, next) => {
+const currentUser = req.session.currentUser;
 
-//   const currentUser = req.session.currentUser;
+  if (!currentUser || currentUser.admin !== true) {
+    return res.redirect("/auth/login");
+  }
+  next();
+};
 
-//   if (!currentUser || currentUser.isAdmin !== true) {
-//     return res.redirect("/");
-//   }
-//   next();
-// };
-
-// module.exports = isAdmin;
+module.exports = isAdmin;

@@ -15,6 +15,10 @@ const userSchema = new Schema(
       trim: true,
       lowercase: true,
     },
+    isAdimin: {
+      type: Boolean,
+      default: false,
+    },
     password: {
       type: String,
       required: true,

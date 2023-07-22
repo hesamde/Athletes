@@ -17,7 +17,7 @@
     Gender :
     {{data.gender}}</div>
 </div>
-
+{{#if currentUser.admin }}
 <form action="/athlete/delete/{{data._id}}" method="post">
   <div class="des-button">
     <button
@@ -37,4 +37,5 @@
     />edit Profile
   </div>
 </form>
+{{/if  }}
 {{!-- <a href="/athlete/athlete-edit/{{data._id}}">edit</a> --}}

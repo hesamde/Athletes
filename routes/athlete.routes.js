@@ -4,6 +4,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const md5 = require("../utils/md5");
+const isAdmin = require("../middleware/isAdmin")
 // const isAdmin = require("../middleware/isAdmin");
 
 const Athlete = require("../models/Athletes.model");
@@ -70,7 +71,7 @@ router.get("/athlete-info", (req, res) => {
   Athlete.findOne({ id: req.query.id })
     .then((data) => {
       console.log(data);
-      res.render("athlete-info", { data });
+      res.render("athlete-info", { data ,currentUser: req.session.currentUser });
     })
     .catch((err) => {
       console.log(err);
@@ -88,7 +89,7 @@ router.post("/delete/:id", async function (req, res, next) {
 });
 // --------------------------------------------
 
-router.get("/athlete-edit/:id", async function (req, res, next) {
+router.get("/athlete-edit/:id", isAdmin,async function (req, res, next) {
   console.log(req.params.id);
   try {
     const editUser = await Athlete.findById(req.params.id);
