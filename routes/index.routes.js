@@ -1,7 +1,9 @@
 const express = require("express");
 const isLoggedIn = require("../middleware/isLoggedIn");
+const isAdmin = require("../middleware/isAdmin");
 const router = express.Router();
 
+// app.all("*", isAdmin); // apply
 /* GET home page */
 router.get("/", (req, res, next) => {
   res.redirect("/home");

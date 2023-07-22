@@ -4,6 +4,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const md5 = require("../utils/md5");
+// const isAdmin = require("../middleware/isAdmin");
 
 const Athlete = require("../models/Athletes.model");
 // let multer = require("multer");
@@ -110,5 +111,28 @@ router.post("/athlete-edit/:id", async function (req, res, next) {
     console.log(error);
   }
 });
+
+// Get: Editing Athlete
+// router
+//   .get("/athlete/:id/edit", (req, res) => {
+//     const AthleteId = req.params.id;
+
+//     Athlete.findById(AthleteId)
+//       .then((Athletes) => {
+//         res.render("./athlete/athlete-edit", {
+//           Athletes,
+//           loggedIn: true,
+//           isAdmin: true,
+//         });
+//       })
+//       .catch((error) => {
+//         console.log("error rendering athlete", error);
+//         res.render("error", { isAdmin: true });
+//       });
+//   })
+//   .catch((error) => {
+//     console.log("error fetching athlete", error);
+//     res.render("error", { isAdmin: true, loggedIn: true });
+//   });
 
 module.exports = router;
