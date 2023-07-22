@@ -1,10 +1,6 @@
-<html>
-  <head>
-    <title>Edit Athlete</title>
-  </head>
-  <body>
+
     <div class="container">
-      <h2>Edit the Athlete: {{title}}</h2>
+      <h2>Edit the Athlete: {{athlete.title}}</h2>
 
       <form
         class="athlete-edit-page"
@@ -13,7 +9,7 @@
       >
         <div>
           <label for="name-input">Name:</label>
-          <input type="text" name="name" id="name-input" value="{{name}}" />
+          <input type="text" name="name" id="name-input" value="{{athlete.name}}" />
         </div>
 
         <div>
@@ -22,7 +18,7 @@
             type="text"
             name="nationality"
             id="nationality-input"
-            value="{{nationality}}"
+            value="{{athlete.nationality}}"
           />
         </div>
 
@@ -32,7 +28,7 @@
             type="text"
             name="achievement"
             id="achievement-input"
-            value="{{achievement}}"
+            value="{{athlete.achievement}}"
           />
         </div>
 
@@ -42,7 +38,7 @@
             type="date"
             name="dateofbirth"
             id="dateofbirth-input"
-            value="{{dateofbirth}}"
+            value="{{athlete.dateofbirth}}"
           />
         </div>
 
@@ -54,7 +50,7 @@
               type="radio"
               name="gender"
               id="male"
-              value="{{gender}}"
+              value="{{athlete.gender}}"
             />
             <label class="form-check-label" for="male">Male</label>
           </div>
@@ -64,7 +60,7 @@
               type="radio"
               name="gender"
               id="female"
-              value="{{gender}}"
+              value="{{athlete.gender}}"
             />
             <label class="form-check-label" for="female">Female</label>
           </div>
@@ -73,5 +69,3 @@
         <button type="submit">Submit</button>
       </form>
     </div>
-  </body>
-</html>

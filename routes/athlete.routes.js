@@ -92,8 +92,8 @@ router.post("/delete/:id", async function (req, res, next) {
 router.get("/athlete-edit/:id", isAdmin,async function (req, res, next) {
   console.log(req.params.id);
   try {
-    const editUser = await Athlete.findById(req.params.id);
-    res.render("athlete-edit", editUser);
+    const athlete = await Athlete.findById(req.params.id);
+    res.render("athlete-edit", {athlete:athlete,currentUser: req.session.currentUser});
     console.log(editUser);
   } catch (error) {
     console.log(error);
