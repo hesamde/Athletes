@@ -37,7 +37,9 @@ body {
 }
 
 .navbar {
-  background-color: white !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: row;
 }
 
 .btn-gray-300 {
@@ -45,7 +47,10 @@ body {
   border: none !important;
 }
 .nav-link {
-  border-bottom: 4px solid white !important;
+  border-bottom: 4px solid !important;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
 }
 .nav-link:hover {
   border-bottom: 4px solid rgb(39, 113, 134) !important;
@@ -70,24 +75,45 @@ body {
   background-color: #277186 !important;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex:1;
+}
+
+
+
 .nav-photo {
-  width: 250px;
-  margin-left: 310px;
+  max-height: 50px;
+  flex: 1;
+}
+.nav-photo img {
+  width: 300px;
+  height: 60px;
+  margin: 0 auto;
+  display: block;
+}
+
+.nav-buttons {
+  max-width: 300px;
+}
+
+.nav-photo--mobile {
+  width: 100px;
+  height: auto;
 }
 
 /* ------- sign up form--------- */
 .gradient-custom-3 {
-  /* fallback for old browsers */
   background: #84fab0;
 
-  /* Chrome 10-25, Safari 5.1-6 */
   background: -webkit-linear-gradient(
     to right,
     rgba(132, 250, 176, 0.5),
     rgba(143, 211, 244, 0.5)
   );
 
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(
     to right,
     rgba(132, 250, 176, 0.5),
@@ -95,17 +121,14 @@ body {
   );
 }
 .gradient-custom-4 {
-  /* fallback for old browsers */
   background: #84fab0;
 
-  /* Chrome 10-25, Safari 5.1-6 */
   background: -webkit-linear-gradient(
     to right,
     rgba(132, 250, 176, 1),
     rgba(143, 211, 244, 1)
   );
 
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(
     to right,
     rgba(132, 250, 176, 1),
@@ -278,7 +301,6 @@ body {
 .athlete-edit-page {
   margin: 300px auto;
   background-color: white;
-
   width: 500px;
   display: flex;
   flex-direction: column;
@@ -291,4 +313,27 @@ body {
 }
 .athlete-edit-page .item:hover {
   background-color: antiquewhite;
+}
+
+
+@media only screen and (max-width: 400px) {
+  .hidden-on-mobile {
+    visibility: hidden;
+    display: none;
+  }
+  .nav-bar--mobile {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  .hidden-on-desktop {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+.btn-min-w-100 {
+  min-width: 100px;
 }

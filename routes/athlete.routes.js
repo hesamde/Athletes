@@ -5,7 +5,6 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const md5 = require("../utils/md5");
 const isAdmin = require("../middleware/isAdmin")
-// const isAdmin = require("../middleware/isAdmin");
 
 const Athlete = require("../models/Athletes.model");
 // let multer = require("multer");
@@ -54,7 +53,6 @@ router.post(
       .then((data) => {
         console.log("Athelete has been added!");
         console.log(data);
-
         res.redirect("/athlete/athlete-list");
       })
       .then((err) => {
@@ -79,7 +77,7 @@ router.get("/athlete-info", (req, res) => {
 });
 
 router.post("/delete/:id", async function (req, res, next) {
-  console.log(req.params.id);
+  console.log(req.params.id);``
   try {
     const deletedUser = await Athlete.findByIdAndDelete(req.params.id);
     res.redirect("/athlete/athlete-list");
@@ -87,7 +85,6 @@ router.post("/delete/:id", async function (req, res, next) {
     console.log(error);
   }
 });
-// --------------------------------------------
 
 router.get("/athlete-edit/:id", isAdmin,async function (req, res, next) {
   console.log(req.params.id);
@@ -99,7 +96,7 @@ router.get("/athlete-edit/:id", isAdmin,async function (req, res, next) {
     console.log(error);
   }
 });
-// -----------------------------------
+
 router.post("/athlete-edit/:id", async function (req, res, next) {
   console.log(req.params.id);
   try {
@@ -112,28 +109,4 @@ router.post("/athlete-edit/:id", async function (req, res, next) {
     console.log(error);
   }
 });
-
-// Get: Editing Athlete
-// router
-//   .get("/athlete/:id/edit", (req, res) => {
-//     const AthleteId = req.params.id;
-
-//     Athlete.findById(AthleteId)
-//       .then((Athletes) => {
-//         res.render("./athlete/athlete-edit", {
-//           Athletes,
-//           loggedIn: true,
-//           isAdmin: true,
-//         });
-//       })
-//       .catch((error) => {
-//         console.log("error rendering athlete", error);
-//         res.render("error", { isAdmin: true });
-//       });
-//   })
-//   .catch((error) => {
-//     console.log("error fetching athlete", error);
-//     res.render("error", { isAdmin: true, loggedIn: true });
-//   });
-
 module.exports = router;

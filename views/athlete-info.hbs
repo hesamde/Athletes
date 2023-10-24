@@ -17,7 +17,7 @@
     Gender :
     {{data.gender}}</div>
 </div>
-{{#if currentUser.admin }}
+{{#if data.username ===  currentUser.username}}
 <form action="/athlete/delete/{{data._id}}" method="post">
   <div class="des-button">
     <button
